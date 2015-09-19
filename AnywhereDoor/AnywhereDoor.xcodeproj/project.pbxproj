@@ -1,0 +1,559 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8CDDD8351BAD67DD008E9851 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CDDD8341BAD67DD008E9851 /* main.m */; };
+		8CDDD8381BAD67DD008E9851 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CDDD8371BAD67DD008E9851 /* AppDelegate.m */; };
+		8CDDD83B1BAD67DD008E9851 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CDDD83A1BAD67DD008E9851 /* ViewController.m */; };
+		8CDDD8401BAD67DD008E9851 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CDDD83F1BAD67DD008E9851 /* Assets.xcassets */; };
+		8CDDD84E1BAD67DD008E9851 /* AnywhereDoorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CDDD84D1BAD67DD008E9851 /* AnywhereDoorTests.m */; };
+		8CDDD8591BAD67DD008E9851 /* AnywhereDoorUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CDDD8581BAD67DD008E9851 /* AnywhereDoorUITests.m */; };
+		8CDDD8691BAD68FC008E9851 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDDD8681BAD68FC008E9851 /* CoreLocation.framework */; };
+		8CDDD86B1BAD6909008E9851 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDDD86A1BAD6909008E9851 /* CoreTelephony.framework */; };
+		8CDDD86D1BAD6914008E9851 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDDD86C1BAD6914008E9851 /* AVFoundation.framework */; };
+		8CDDD86F1BAD691D008E9851 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDDD86E1BAD691D008E9851 /* AddressBook.framework */; };
+		8CDDD8711BAD6929008E9851 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDDD8701BAD6929008E9851 /* AudioToolbox.framework */; };
+		8CDDD8731BAD6940008E9851 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDDD8721BAD6940008E9851 /* SystemConfiguration.framework */; };
+		8CDDD8751BAD694B008E9851 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDDD8741BAD694B008E9851 /* QuartzCore.framework */; };
+		8CDDD8771BAD6952008E9851 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDDD8761BAD6952008E9851 /* UIKit.framework */; };
+		8CDDD8791BAD695B008E9851 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDDD8781BAD695B008E9851 /* Foundation.framework */; };
+		8CDDD87B1BAD696A008E9851 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDDD87A1BAD696A008E9851 /* CoreGraphics.framework */; };
+		8CDDD87F1BAD8C5D008E9851 /* libz.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDDD87D1BAD8C36008E9851 /* libz.1.dylib */; };
+		8CDDD8811BAD8C80008E9851 /* libc++.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDDD8801BAD8C80008E9851 /* libc++.1.dylib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8CDDD84A1BAD67DD008E9851 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8CDDD8281BAD67DD008E9851 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8CDDD82F1BAD67DD008E9851;
+			remoteInfo = AnywhereDoor;
+		};
+		8CDDD8551BAD67DD008E9851 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8CDDD8281BAD67DD008E9851 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8CDDD82F1BAD67DD008E9851;
+			remoteInfo = AnywhereDoor;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		8CDDD8301BAD67DD008E9851 /* AnywhereDoor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnywhereDoor.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8CDDD8341BAD67DD008E9851 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8CDDD8361BAD67DD008E9851 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		8CDDD8371BAD67DD008E9851 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		8CDDD8391BAD67DD008E9851 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		8CDDD83A1BAD67DD008E9851 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		8CDDD83F1BAD67DD008E9851 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8CDDD8441BAD67DD008E9851 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8CDDD8491BAD67DD008E9851 /* AnywhereDoorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AnywhereDoorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8CDDD84D1BAD67DD008E9851 /* AnywhereDoorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AnywhereDoorTests.m; sourceTree = "<group>"; };
+		8CDDD84F1BAD67DD008E9851 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8CDDD8541BAD67DD008E9851 /* AnywhereDoorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AnywhereDoorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8CDDD8581BAD67DD008E9851 /* AnywhereDoorUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AnywhereDoorUITests.m; sourceTree = "<group>"; };
+		8CDDD85A1BAD67DD008E9851 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8CDDD8681BAD68FC008E9851 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		8CDDD86A1BAD6909008E9851 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		8CDDD86C1BAD6914008E9851 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		8CDDD86E1BAD691D008E9851 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		8CDDD8701BAD6929008E9851 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		8CDDD8721BAD6940008E9851 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		8CDDD8741BAD694B008E9851 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		8CDDD8761BAD6952008E9851 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		8CDDD8781BAD695B008E9851 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		8CDDD87A1BAD696A008E9851 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		8CDDD87D1BAD8C36008E9851 /* libz.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.dylib; path = ../../../../../usr/lib/libz.1.dylib; sourceTree = "<group>"; };
+		8CDDD8801BAD8C80008E9851 /* libc++.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.1.dylib"; path = "../../../../../usr/lib/libc++.1.dylib"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8CDDD82D1BAD67DD008E9851 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8CDDD8811BAD8C80008E9851 /* libc++.1.dylib in Frameworks */,
+				8CDDD87F1BAD8C5D008E9851 /* libz.1.dylib in Frameworks */,
+				8CDDD87B1BAD696A008E9851 /* CoreGraphics.framework in Frameworks */,
+				8CDDD8791BAD695B008E9851 /* Foundation.framework in Frameworks */,
+				8CDDD8771BAD6952008E9851 /* UIKit.framework in Frameworks */,
+				8CDDD8751BAD694B008E9851 /* QuartzCore.framework in Frameworks */,
+				8CDDD8731BAD6940008E9851 /* SystemConfiguration.framework in Frameworks */,
+				8CDDD8711BAD6929008E9851 /* AudioToolbox.framework in Frameworks */,
+				8CDDD86F1BAD691D008E9851 /* AddressBook.framework in Frameworks */,
+				8CDDD86D1BAD6914008E9851 /* AVFoundation.framework in Frameworks */,
+				8CDDD86B1BAD6909008E9851 /* CoreTelephony.framework in Frameworks */,
+				8CDDD8691BAD68FC008E9851 /* CoreLocation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8CDDD8461BAD67DD008E9851 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8CDDD8511BAD67DD008E9851 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8CDDD8271BAD67DD008E9851 = {
+			isa = PBXGroup;
+			children = (
+				8CDDD8321BAD67DD008E9851 /* AnywhereDoor */,
+				8CDDD87C1BAD69B9008E9851 /* Frameworks */,
+				8CDDD84C1BAD67DD008E9851 /* AnywhereDoorTests */,
+				8CDDD8571BAD67DD008E9851 /* AnywhereDoorUITests */,
+				8CDDD8311BAD67DD008E9851 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8CDDD8311BAD67DD008E9851 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8CDDD8301BAD67DD008E9851 /* AnywhereDoor.app */,
+				8CDDD8491BAD67DD008E9851 /* AnywhereDoorTests.xctest */,
+				8CDDD8541BAD67DD008E9851 /* AnywhereDoorUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8CDDD8321BAD67DD008E9851 /* AnywhereDoor */ = {
+			isa = PBXGroup;
+			children = (
+				8CDDD8361BAD67DD008E9851 /* AppDelegate.h */,
+				8CDDD8371BAD67DD008E9851 /* AppDelegate.m */,
+				8CDDD8391BAD67DD008E9851 /* ViewController.h */,
+				8CDDD83A1BAD67DD008E9851 /* ViewController.m */,
+				8CDDD83F1BAD67DD008E9851 /* Assets.xcassets */,
+				8CDDD8441BAD67DD008E9851 /* Info.plist */,
+				8CDDD8331BAD67DD008E9851 /* Supporting Files */,
+			);
+			path = AnywhereDoor;
+			sourceTree = "<group>";
+		};
+		8CDDD8331BAD67DD008E9851 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8CDDD8341BAD67DD008E9851 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8CDDD84C1BAD67DD008E9851 /* AnywhereDoorTests */ = {
+			isa = PBXGroup;
+			children = (
+				8CDDD84D1BAD67DD008E9851 /* AnywhereDoorTests.m */,
+				8CDDD84F1BAD67DD008E9851 /* Info.plist */,
+			);
+			path = AnywhereDoorTests;
+			sourceTree = "<group>";
+		};
+		8CDDD8571BAD67DD008E9851 /* AnywhereDoorUITests */ = {
+			isa = PBXGroup;
+			children = (
+				8CDDD8581BAD67DD008E9851 /* AnywhereDoorUITests.m */,
+				8CDDD85A1BAD67DD008E9851 /* Info.plist */,
+			);
+			path = AnywhereDoorUITests;
+			sourceTree = "<group>";
+		};
+		8CDDD87C1BAD69B9008E9851 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8CDDD8801BAD8C80008E9851 /* libc++.1.dylib */,
+				8CDDD87D1BAD8C36008E9851 /* libz.1.dylib */,
+				8CDDD87A1BAD696A008E9851 /* CoreGraphics.framework */,
+				8CDDD8781BAD695B008E9851 /* Foundation.framework */,
+				8CDDD8761BAD6952008E9851 /* UIKit.framework */,
+				8CDDD8741BAD694B008E9851 /* QuartzCore.framework */,
+				8CDDD8721BAD6940008E9851 /* SystemConfiguration.framework */,
+				8CDDD8701BAD6929008E9851 /* AudioToolbox.framework */,
+				8CDDD86E1BAD691D008E9851 /* AddressBook.framework */,
+				8CDDD86C1BAD6914008E9851 /* AVFoundation.framework */,
+				8CDDD86A1BAD6909008E9851 /* CoreTelephony.framework */,
+				8CDDD8681BAD68FC008E9851 /* CoreLocation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8CDDD82F1BAD67DD008E9851 /* AnywhereDoor */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8CDDD85D1BAD67DD008E9851 /* Build configuration list for PBXNativeTarget "AnywhereDoor" */;
+			buildPhases = (
+				8CDDD82C1BAD67DD008E9851 /* Sources */,
+				8CDDD82D1BAD67DD008E9851 /* Frameworks */,
+				8CDDD82E1BAD67DD008E9851 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AnywhereDoor;
+			productName = AnywhereDoor;
+			productReference = 8CDDD8301BAD67DD008E9851 /* AnywhereDoor.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8CDDD8481BAD67DD008E9851 /* AnywhereDoorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8CDDD8601BAD67DD008E9851 /* Build configuration list for PBXNativeTarget "AnywhereDoorTests" */;
+			buildPhases = (
+				8CDDD8451BAD67DD008E9851 /* Sources */,
+				8CDDD8461BAD67DD008E9851 /* Frameworks */,
+				8CDDD8471BAD67DD008E9851 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8CDDD84B1BAD67DD008E9851 /* PBXTargetDependency */,
+			);
+			name = AnywhereDoorTests;
+			productName = AnywhereDoorTests;
+			productReference = 8CDDD8491BAD67DD008E9851 /* AnywhereDoorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		8CDDD8531BAD67DD008E9851 /* AnywhereDoorUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8CDDD8631BAD67DD008E9851 /* Build configuration list for PBXNativeTarget "AnywhereDoorUITests" */;
+			buildPhases = (
+				8CDDD8501BAD67DD008E9851 /* Sources */,
+				8CDDD8511BAD67DD008E9851 /* Frameworks */,
+				8CDDD8521BAD67DD008E9851 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8CDDD8561BAD67DD008E9851 /* PBXTargetDependency */,
+			);
+			name = AnywhereDoorUITests;
+			productName = AnywhereDoorUITests;
+			productReference = 8CDDD8541BAD67DD008E9851 /* AnywhereDoorUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8CDDD8281BAD67DD008E9851 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = Leppard;
+				TargetAttributes = {
+					8CDDD82F1BAD67DD008E9851 = {
+						CreatedOnToolsVersion = 7.0;
+					};
+					8CDDD8481BAD67DD008E9851 = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = 8CDDD82F1BAD67DD008E9851;
+					};
+					8CDDD8531BAD67DD008E9851 = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = 8CDDD82F1BAD67DD008E9851;
+					};
+				};
+			};
+			buildConfigurationList = 8CDDD82B1BAD67DD008E9851 /* Build configuration list for PBXProject "AnywhereDoor" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8CDDD8271BAD67DD008E9851;
+			productRefGroup = 8CDDD8311BAD67DD008E9851 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8CDDD82F1BAD67DD008E9851 /* AnywhereDoor */,
+				8CDDD8481BAD67DD008E9851 /* AnywhereDoorTests */,
+				8CDDD8531BAD67DD008E9851 /* AnywhereDoorUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8CDDD82E1BAD67DD008E9851 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8CDDD8401BAD67DD008E9851 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8CDDD8471BAD67DD008E9851 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8CDDD8521BAD67DD008E9851 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8CDDD82C1BAD67DD008E9851 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8CDDD83B1BAD67DD008E9851 /* ViewController.m in Sources */,
+				8CDDD8381BAD67DD008E9851 /* AppDelegate.m in Sources */,
+				8CDDD8351BAD67DD008E9851 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8CDDD8451BAD67DD008E9851 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8CDDD84E1BAD67DD008E9851 /* AnywhereDoorTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8CDDD8501BAD67DD008E9851 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8CDDD8591BAD67DD008E9851 /* AnywhereDoorUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8CDDD84B1BAD67DD008E9851 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8CDDD82F1BAD67DD008E9851 /* AnywhereDoor */;
+			targetProxy = 8CDDD84A1BAD67DD008E9851 /* PBXContainerItemProxy */;
+		};
+		8CDDD8561BAD67DD008E9851 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8CDDD82F1BAD67DD008E9851 /* AnywhereDoor */;
+			targetProxy = 8CDDD8551BAD67DD008E9851 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		8CDDD85B1BAD67DD008E9851 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		8CDDD85C1BAD67DD008E9851 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8CDDD85E1BAD67DD008E9851 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SRCROOT)/AnywhereDoor/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = AnywhereDoor/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = WindChaser.AnywhereDoor;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		8CDDD85F1BAD67DD008E9851 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SRCROOT)/AnywhereDoor/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = AnywhereDoor/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = WindChaser.AnywhereDoor;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		8CDDD8611BAD67DD008E9851 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = AnywhereDoorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = WindChaser.AnywhereDoorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AnywhereDoor.app/AnywhereDoor";
+			};
+			name = Debug;
+		};
+		8CDDD8621BAD67DD008E9851 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = AnywhereDoorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = WindChaser.AnywhereDoorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AnywhereDoor.app/AnywhereDoor";
+			};
+			name = Release;
+		};
+		8CDDD8641BAD67DD008E9851 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = AnywhereDoorUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = WindChaser.AnywhereDoorUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = AnywhereDoor;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		8CDDD8651BAD67DD008E9851 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = AnywhereDoorUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = WindChaser.AnywhereDoorUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = AnywhereDoor;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8CDDD82B1BAD67DD008E9851 /* Build configuration list for PBXProject "AnywhereDoor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8CDDD85B1BAD67DD008E9851 /* Debug */,
+				8CDDD85C1BAD67DD008E9851 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8CDDD85D1BAD67DD008E9851 /* Build configuration list for PBXNativeTarget "AnywhereDoor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8CDDD85E1BAD67DD008E9851 /* Debug */,
+				8CDDD85F1BAD67DD008E9851 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8CDDD8601BAD67DD008E9851 /* Build configuration list for PBXNativeTarget "AnywhereDoorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8CDDD8611BAD67DD008E9851 /* Debug */,
+				8CDDD8621BAD67DD008E9851 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8CDDD8631BAD67DD008E9851 /* Build configuration list for PBXNativeTarget "AnywhereDoorUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8CDDD8641BAD67DD008E9851 /* Debug */,
+				8CDDD8651BAD67DD008E9851 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8CDDD8281BAD67DD008E9851 /* Project object */;
+}
