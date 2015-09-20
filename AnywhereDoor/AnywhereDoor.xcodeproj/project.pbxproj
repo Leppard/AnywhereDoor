@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8C80714E1BAE6CD300DFE3F3 /* RecordTimingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C80714D1BAE6CD300DFE3F3 /* RecordTimingView.m */; settings = {ASSET_TAGS = (); }; };
+		8CA1BE051BADBE1900DFCBE7 /* iflyMSC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CA1BE041BADBE1900DFCBE7 /* iflyMSC.framework */; };
 		8CDDD8351BAD67DD008E9851 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CDDD8341BAD67DD008E9851 /* main.m */; };
 		8CDDD8381BAD67DD008E9851 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CDDD8371BAD67DD008E9851 /* AppDelegate.m */; };
 		8CDDD83B1BAD67DD008E9851 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CDDD83A1BAD67DD008E9851 /* ViewController.m */; };
@@ -25,6 +27,8 @@
 		8CDDD87B1BAD696A008E9851 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDDD87A1BAD696A008E9851 /* CoreGraphics.framework */; };
 		8CDDD87F1BAD8C5D008E9851 /* libz.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDDD87D1BAD8C36008E9851 /* libz.1.dylib */; };
 		8CDDD8811BAD8C80008E9851 /* libc++.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDDD8801BAD8C80008E9851 /* libc++.1.dylib */; };
+		8CF151F21BADD3D9006D18D3 /* ISRDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CF151F11BADD3D9006D18D3 /* ISRDataHelper.m */; settings = {ASSET_TAGS = (); }; };
+		E31297A51A5970E27A397F61 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A5E4ED5A9EEF11E3E269BABD /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +49,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		32773508F0A7924E7F03A2F1 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		7DD397050584F7CA8598BBEF /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		8C80714C1BAE6CD300DFE3F3 /* RecordTimingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordTimingView.h; sourceTree = "<group>"; };
+		8C80714D1BAE6CD300DFE3F3 /* RecordTimingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordTimingView.m; sourceTree = "<group>"; };
+		8CA1BE021BADB8CF00DFCBE7 /* Definition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Definition.h; sourceTree = "<group>"; };
+		8CA1BE041BADBE1900DFCBE7 /* iflyMSC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iflyMSC.framework; path = AnywhereDoor/Frameworks/iflyMSC.framework; sourceTree = "<group>"; };
 		8CDDD8301BAD67DD008E9851 /* AnywhereDoor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnywhereDoor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CDDD8341BAD67DD008E9851 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8CDDD8361BAD67DD008E9851 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -71,6 +81,9 @@
 		8CDDD87A1BAD696A008E9851 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		8CDDD87D1BAD8C36008E9851 /* libz.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.dylib; path = ../../../../../usr/lib/libz.1.dylib; sourceTree = "<group>"; };
 		8CDDD8801BAD8C80008E9851 /* libc++.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.1.dylib"; path = "../../../../../usr/lib/libc++.1.dylib"; sourceTree = "<group>"; };
+		8CF151F01BADD3D9006D18D3 /* ISRDataHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISRDataHelper.h; sourceTree = "<group>"; };
+		8CF151F11BADD3D9006D18D3 /* ISRDataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISRDataHelper.m; sourceTree = "<group>"; };
+		A5E4ED5A9EEF11E3E269BABD /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CA1BE051BADBE1900DFCBE7 /* iflyMSC.framework in Frameworks */,
 				8CDDD8811BAD8C80008E9851 /* libc++.1.dylib in Frameworks */,
 				8CDDD87F1BAD8C5D008E9851 /* libz.1.dylib in Frameworks */,
 				8CDDD87B1BAD696A008E9851 /* CoreGraphics.framework in Frameworks */,
@@ -90,6 +104,7 @@
 				8CDDD86D1BAD6914008E9851 /* AVFoundation.framework in Frameworks */,
 				8CDDD86B1BAD6909008E9851 /* CoreTelephony.framework in Frameworks */,
 				8CDDD8691BAD68FC008E9851 /* CoreLocation.framework in Frameworks */,
+				E31297A51A5970E27A397F61 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,6 +125,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		28528DA43250DC35289F9D49 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7DD397050584F7CA8598BBEF /* Pods.debug.xcconfig */,
+				32773508F0A7924E7F03A2F1 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		8CDDD8271BAD67DD008E9851 = {
 			isa = PBXGroup;
 			children = (
@@ -118,6 +142,7 @@
 				8CDDD84C1BAD67DD008E9851 /* AnywhereDoorTests */,
 				8CDDD8571BAD67DD008E9851 /* AnywhereDoorUITests */,
 				8CDDD8311BAD67DD008E9851 /* Products */,
+				28528DA43250DC35289F9D49 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -134,10 +159,15 @@
 		8CDDD8321BAD67DD008E9851 /* AnywhereDoor */ = {
 			isa = PBXGroup;
 			children = (
+				8CA1BE021BADB8CF00DFCBE7 /* Definition.h */,
 				8CDDD8361BAD67DD008E9851 /* AppDelegate.h */,
 				8CDDD8371BAD67DD008E9851 /* AppDelegate.m */,
 				8CDDD8391BAD67DD008E9851 /* ViewController.h */,
 				8CDDD83A1BAD67DD008E9851 /* ViewController.m */,
+				8C80714C1BAE6CD300DFE3F3 /* RecordTimingView.h */,
+				8C80714D1BAE6CD300DFE3F3 /* RecordTimingView.m */,
+				8CF151F01BADD3D9006D18D3 /* ISRDataHelper.h */,
+				8CF151F11BADD3D9006D18D3 /* ISRDataHelper.m */,
 				8CDDD83F1BAD67DD008E9851 /* Assets.xcassets */,
 				8CDDD8441BAD67DD008E9851 /* Info.plist */,
 				8CDDD8331BAD67DD008E9851 /* Supporting Files */,
@@ -174,6 +204,7 @@
 		8CDDD87C1BAD69B9008E9851 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8CA1BE041BADBE1900DFCBE7 /* iflyMSC.framework */,
 				8CDDD8801BAD8C80008E9851 /* libc++.1.dylib */,
 				8CDDD87D1BAD8C36008E9851 /* libz.1.dylib */,
 				8CDDD87A1BAD696A008E9851 /* CoreGraphics.framework */,
@@ -186,6 +217,7 @@
 				8CDDD86C1BAD6914008E9851 /* AVFoundation.framework */,
 				8CDDD86A1BAD6909008E9851 /* CoreTelephony.framework */,
 				8CDDD8681BAD68FC008E9851 /* CoreLocation.framework */,
+				A5E4ED5A9EEF11E3E269BABD /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -197,9 +229,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8CDDD85D1BAD67DD008E9851 /* Build configuration list for PBXNativeTarget "AnywhereDoor" */;
 			buildPhases = (
+				0FE78ADA5E18E1864864E263 /* Check Pods Manifest.lock */,
 				8CDDD82C1BAD67DD008E9851 /* Sources */,
 				8CDDD82D1BAD67DD008E9851 /* Frameworks */,
 				8CDDD82E1BAD67DD008E9851 /* Resources */,
+				9843F924BF9BCB73A9952069 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -313,13 +347,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0FE78ADA5E18E1864864E263 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		9843F924BF9BCB73A9952069 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8CDDD82C1BAD67DD008E9851 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C80714E1BAE6CD300DFE3F3 /* RecordTimingView.m in Sources */,
 				8CDDD83B1BAD67DD008E9851 /* ViewController.m in Sources */,
 				8CDDD8381BAD67DD008E9851 /* AppDelegate.m in Sources */,
+				8CF151F21BADD3D9006D18D3 /* ISRDataHelper.m in Sources */,
 				8CDDD8351BAD67DD008E9851 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -438,13 +507,17 @@
 		};
 		8CDDD85E1BAD67DD008E9851 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7DD397050584F7CA8598BBEF /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SRCROOT)/AnywhereDoor/Frameworks",
 					"$(inherited)",
+					"$(PROJECT_DIR)/AnywhereDoor/Frameworks",
 				);
 				INFOPLIST_FILE = AnywhereDoor/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = WindChaser.AnywhereDoor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -453,13 +526,17 @@
 		};
 		8CDDD85F1BAD67DD008E9851 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 32773508F0A7924E7F03A2F1 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SRCROOT)/AnywhereDoor/Frameworks",
 					"$(inherited)",
+					"$(PROJECT_DIR)/AnywhereDoor/Frameworks",
 				);
 				INFOPLIST_FILE = AnywhereDoor/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = WindChaser.AnywhereDoor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
