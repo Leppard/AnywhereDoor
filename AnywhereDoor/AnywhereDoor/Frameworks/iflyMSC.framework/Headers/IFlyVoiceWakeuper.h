@@ -6,6 +6,7 @@
 //  Copyright (c) 2014年 iflytek. All rights reserved.
 //
 
+
 #import <Foundation/Foundation.h>
 #import "IFlyVoiceWakeuperDelegate.h"
 
@@ -16,30 +17,28 @@
   语音唤醒资源占用（iPhone5s实测）
   内存占用：3M
   CPU占用：< 12%
-  
-  注意：目前仅仅支持32位iOS系统，尚不支持64位。
  
  
   唤醒服务接口时序描述
  
-  createWakeuper 创建唤醒实例
+  sharedInstance 创建唤醒实例
   setParameter 设置服务参数
  
-    例：[_voiceWakeuper setParameter:@"sst" value:@"wake"];
+    例：[_voiceWakeuper setParameter:@"wake" forKey:@"sst"];
         sst 表示服务类型，wake是唤醒，enroll是注册
  
-    例：[_voiceWakeuper setParameter:@"ivw_wake_list" value:m_wakeupResPath];
+    例：[_voiceWakeuper setParameter:@"m_wakeupResPath" forKey:@"ivw_wake_list"];
         ivw_wake_list 表示唤醒资源的路径
  
-    例：[_voiceWakeuper setParameter:@"ivw_threshold" value:holdValue];
+    例：[_voiceWakeuper setParameter:@"holdValue" forKey:@"ivw_threshold"];
         ivw_threshold 表示唤醒资源的阀值，holdValue形式：
             ID：20；15；30
             每个数字代表对应资源的阀值，15表示资源1阀值，20表示资源2阀值，30表示资源3阀值
             本demo只有一个资源设置为ID：20 则可
  
   startListening启动服务
-  cancel 取消服务，但是不释放内部资源
-  onFini 终止服务，并释放内部资源
+  stopListening 取消服务，但是不释放内部资源
+  cancel 终止服务，并释放内部资源
 
  
  *参数定义
@@ -120,25 +119,7 @@
  * 表示资源合并操作
  MERGE_RES_ACTION @"merge"
 
- 
- * 错误码定义
-    server success
-    SUCCESS     0
-
-    server failed
-    FAILURE     -1
-
-
-    recorder start failed
-    ERROR_RECORD        800001
-
-
-    wakeuper busy
-    ERROR_IVP_BUSY      800039
-
-    wakeuper resource is invalid
-    ERROR_IVW_RES       800038
- */
+*/
 
 
 @interface IFlyVoiceWakeuper : NSObject
@@ -156,13 +137,13 @@
 
 /**
   启动唤醒
-  返回值:0 成功，其他值：错误码
+  返回值:YES 成功，NO：失败
  */
 -(BOOL) startListening;
 
 /**
   取消唤醒会话
-  注意与onFini的区别，紧紧停止服务，并不释放资源
+  注意与cancel的区别，紧紧停止服务，并不释放资源
  */
 -(BOOL) stopListening;
 
@@ -191,7 +172,7 @@
   写入录音数据
   暂时紧紧支持唤醒的写入，注册服务尚不支持
  */
--(int) writeAudio:(const void*)buffer offset:(int)offset  length:(int)length;
+//-(int) writeAudio:(const void*)buffer offset:(int)offset  length:(int)length;
 
 @property (readonly) BOOL isListening;
 

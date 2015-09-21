@@ -6,6 +6,9 @@
 //  Copyright (c) 2013年 iflytek. All rights reserved.
 //
 
+#ifndef MSC_IFlyMSCError_h
+#define MSC_IFlyMSCError_h
+
 #import <Foundation/Foundation.h>
 
 /** 错误描述类 */
@@ -43,3 +46,4 @@
 - (NSString *) errorDesc;
 
 @end
+#endif

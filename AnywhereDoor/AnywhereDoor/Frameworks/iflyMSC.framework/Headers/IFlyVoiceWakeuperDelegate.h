@@ -7,8 +7,11 @@
 //  Copyright (c) 2014年 iflytek. All rights reserved.
 //
 
-//#import <Foundation/Foundation.h>
-#import "IFlySpeechError.h"
+
+
+#import <Foundation/Foundation.h>
+
+@class IFlySpeechError;
 
 /**
  *  代理返回时序描述
@@ -78,3 +81,4 @@
 - (void) onEvent:(int)eventType isLast:(BOOL)isLast arg1:(int)arg1 data:(NSMutableDictionary *)eventData;
 
 @end
+

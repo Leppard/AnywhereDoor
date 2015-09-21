@@ -6,9 +6,10 @@
 //  Copyright (c) 2014年 iflytek. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import "IFlySpeechError.h"
 
+#import <Foundation/Foundation.h>
+
+@class IFlySpeechError;
 @protocol IFlyISVDelegate
 
 -(void) onResult:(NSDictionary *)dic;
@@ -21,3 +22,4 @@
 -(void) onVolumeChanged: (int)volume;
 
 @end
+

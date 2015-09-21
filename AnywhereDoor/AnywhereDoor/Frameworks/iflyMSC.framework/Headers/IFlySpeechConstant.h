@@ -137,6 +137,13 @@
 +(NSString*)PARAMS;
 
 /*!
+ *  录音音量返回时间间隔。
+ *
+ *  @return 间隔key。
+ */
++(NSString*)POWER_CYCLE;
+
+/*!
  *  合成、识别、唤醒、评测、声纹等业务采样率。
  *
  *  @return 合成及识别采样率key。
@@ -231,6 +238,13 @@
  *  @return 合成录音保存路径key
  */
 +(NSString*)TTS_AUDIO_PATH;
+
+/**
+ *  启用VAD功能
+ *
+ *  @return 启用VAD功能key
+ */
++(NSString*)VAD_ENABLE;
 
 /*!
  *  VAD前端点超时
@@ -569,6 +583,14 @@
 #pragma mark -  身份验证业务key
 
 /**
+ *  auth_id
+ *  用于用户注册和登录、查询、删除等业务时标识用户身份
+ *
+ *  @return 用户标识
+ */
++ (NSString*)MFV_AUTH_ID;
+
+/**
  *  请求业务类型，可选值：mfv（默认，融合验证），ivp（声纹），ifr（人脸）
  *
  *  @return 请求业务类型key
@@ -611,5 +633,63 @@
  *  @return 数据保存路径key
  */
 + (NSString*)MFV_DATA_PATH;
+
+/**
+ *  训练次数：取值2~9.无默认值，必须明确指定。
+ *
+ *  @return 训练次数key
+ */
++ (NSString*)MFV_RGN;
+
+/**
+ *  声纹确认门限值，验证得分>=tsd验证通过，否则验证失败（该参数目前不支持,作为保留参数。）却只范围：0~100.
+ *
+ *  @return 声纹确认门限值key
+ */
++ (NSString*)MFV_TSD;
+
+/**
+ *  密码文本。从服务端下载，比如数字密码所需要的数字串。
+ *
+ *  @return 密码文本key
+ */
++ (NSString*)MFV_PTXT;
+
+/**
+ *  密码类型。取值：1(文本密码),2(自由说),3(数字密码).
+ *
+ *  @return 密码类型key
+ */
++ (NSString*)MFV_PWDT;
+
+/**
+ *  取消注册。取值：0(不取消，即不生效),1(取消本次注册).
+ *
+ *  @return 取消注册key
+ */
++ (NSString*)MFV_FIN;
+
+/**
+ *  等待超时时间:描述客户端等待结果的超时时间
+ *
+ *  @return 等待超时时间:key
+ */
++ (NSString*)MFV_WTT;
+
+/**
+ *  数据格式
+ *  声纹为音频采样率支持：16000和8000;人脸为图片格式，支持jpg和gif
+ *
+ *  @return 数据格式key
+ */
++ (NSString*)MFV_DATA_FORMAT;
+
+/**
+ *  数据压缩编码
+ *  声纹为;人脸支持raw，不对图片压缩
+ *
+ *  @return 数据压缩编码key
+ */
++ (NSString*)MFV_DATA_ENCODING;
 
 @end
