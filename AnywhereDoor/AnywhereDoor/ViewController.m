@@ -58,6 +58,58 @@
     [super viewWillDisappear:animated];
 }
 
+
+#pragma mark - Delegate -
+
+/*识别结果返回代理
+ @param resultArray 识别结果
+ @ param isLast 表示是否最后一次结果
+ */
+- (void)onResults:(NSArray *)results isLast:(BOOL)isLast
+{
+    NSMutableString *result = [[NSMutableString alloc] init];
+    NSDictionary *dic = [results objectAtIndex:0];
+    
+    for (NSString *key in dic) {
+        [result appendFormat:@"%@",key];
+    }
+    NSString *resultFromJson = [ISRDataHelper stringFromJson:result];
+    
+    self.resultLabel.text = [NSString stringWithFormat:@"%@%@",self.resultLabel.text,resultFromJson];
+    
+    [self handleResultStr:resultFromJson];
+}
+
+
+/*识别会话错误返回代理
+ @ param  error 错误码
+ */
+- (void)onError: (IFlySpeechError *) error
+{
+    
+}
+
+- (void) onCompleted:(IFlySpeechError *) error
+{
+    
+}
+//合成开始
+- (void) onSpeakBegin
+{
+    
+}
+//合成缓冲进度
+- (void) onBufferProgress:(int) progress message:(NSString *)msg
+{
+    
+}
+//合成播放进度
+- (void) onSpeakProgress:(int) progress
+{
+    
+}
+
+
 #pragma mark - Private Methods -
 
 - (void)initRecognizer
@@ -144,64 +196,44 @@
     [_iFlySpeechRecognizer stopListening];
 }
 
-- (void)sendGetRequestWithResult:(NSString *)result
+- (void)handleResultStr:(NSString *)result
 {
-    NSString *transStr = [result stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    NSDictionary *params = @{@"content":transStr};
+    NSString *str = [result stringByReplacingOccurrencesOfString:@" " withString:@""];
+    NSRange range = [str rangeOfString:SET_COMMAND];
+    NSString *aliasStr = [str substringFromIndex:range.location+range.length];
+    if ([str rangeOfString:SET_COMMAND].location != NSNotFound) { // 保存坐标指令
+        [self saveCurrentLocationWithAlias:aliasStr];
+    } else if ([str rangeOfString:GOTO_COMMAND].location != NSNotFound) { // 前往坐标指令
+        [self jumpToLocationByAlias:aliasStr];
+    } else {
+        [_iFlySpeechSynthesizer startSpeaking:COMMAND_ERROR_VOICE];
+    }
+}
+
+- (void)saveCurrentLocationWithAlias:(NSString *)alias
+{
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    [manager GET:ROOT_URL parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        [_iFlySpeechSynthesizer startSpeaking:result];
+    [manager GET:GET_LOCATION_URL parameters:nil
+         success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        [[NSUserDefaults standardUserDefaults] setObject:responseObject forKey:alias];
+        [_iFlySpeechSynthesizer startSpeaking:SAVE_SUCCESS_VOICE];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
+        // 增加失败处理
     }];
 }
 
-#pragma mark - Delegate -
-
-/*识别结果返回代理
- @param resultArray 识别结果
- @ param isLast 表示是否最后一次结果
- */
-- (void)onResults:(NSArray *)results isLast:(BOOL)isLast
+- (void)jumpToLocationByAlias:(NSString *)alias
 {
-    NSMutableString *result = [[NSMutableString alloc] init];
-    NSDictionary *dic = [results objectAtIndex:0];
-    
-    for (NSString *key in dic) {
-        [result appendFormat:@"%@",key];
-    }
-    NSString * resultFromJson = [ISRDataHelper stringFromJson:result];
-    self.resultLabel.text = [NSString stringWithFormat:@"%@%@",self.resultLabel.text,resultFromJson];
-    [self sendGetRequestWithResult:resultFromJson];
-}
-
-
-/*识别会话错误返回代理
- @ param  error 错误码
- */
-- (void)onError: (IFlySpeechError *) error
-{
-    
-}
-
-- (void) onCompleted:(IFlySpeechError *) error
-{
-
-}
-//合成开始
-- (void) onSpeakBegin
-{
-
-}
-//合成缓冲进度
-- (void) onBufferProgress:(int) progress message:(NSString *)msg
-{
-
-}
-//合成播放进度
-- (void) onSpeakProgress:(int) progress
-{
-
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    NSDictionary *params = [[NSUserDefaults standardUserDefaults] dictionaryForKey:alias];
+    [manager GET:GET_LOCATION_URL parameters:params
+         success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        [_iFlySpeechSynthesizer startSpeaking:JUMP_SUCCESS_VOICE];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+        // 增加失败处理
+    }];
 }
 
 

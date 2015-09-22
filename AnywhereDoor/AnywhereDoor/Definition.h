@@ -11,4 +11,11 @@
 
 #define APPID_VALUE           @"55fd2a4b"
 
-#define ROOT_URL              @"http://zeman.im/door/addnewquery.php"
+#define GET_LOCATION_URL      @"http://zeman.im/door/getlatestlocation.php"
+
+#define SET_COMMAND           @"setas"
+#define GOTO_COMMAND          @"goto"
+
+#define SAVE_SUCCESS_VOICE    @"saving location succeed"
+#define JUMP_SUCCESS_VOICE    @"jumping to destination"
+#define COMMAND_ERROR_VOICE   @"sorry, I can not recognize your command, please check and speak again"
