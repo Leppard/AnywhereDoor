@@ -12,6 +12,7 @@
 #define APPID_VALUE           @"55fd2a4b"
 
 #define GET_LOCATION_URL      @"http://zeman.im/door/getlatestlocation.php"
+#define GOTO_LOCATION_URL     @"http://zeman.im/door/changelocation.php"
 
 #define SET_COMMAND           @"setas"
 #define GOTO_COMMAND          @"goto"

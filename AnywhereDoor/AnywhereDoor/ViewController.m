@@ -199,11 +199,18 @@
 - (void)handleResultStr:(NSString *)result
 {
     NSString *str = [result stringByReplacingOccurrencesOfString:@" " withString:@""];
-    NSRange range = [str rangeOfString:SET_COMMAND];
-    NSString *aliasStr = [str substringFromIndex:range.location+range.length];
+    str = [str lowercaseString];
+    str = [str stringByReplacingOccurrencesOfString:@"." withString:@""];
+    if ([str isEqualToString:@""] || [str isEqualToString:@"setas"] || [str isEqualToString:@"goto"]) {
+        return;
+    }
     if ([str rangeOfString:SET_COMMAND].location != NSNotFound) { // 保存坐标指令
+        NSRange range = [str rangeOfString:SET_COMMAND];
+        NSString *aliasStr = [str substringFromIndex:range.location+range.length];
         [self saveCurrentLocationWithAlias:aliasStr];
     } else if ([str rangeOfString:GOTO_COMMAND].location != NSNotFound) { // 前往坐标指令
+        NSRange range = [str rangeOfString:GOTO_COMMAND];
+        NSString *aliasStr = [str substringFromIndex:range.location+range.length];
         [self jumpToLocationByAlias:aliasStr];
     } else {
         [_iFlySpeechSynthesizer startSpeaking:COMMAND_ERROR_VOICE];
@@ -227,7 +234,7 @@
 {
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     NSDictionary *params = [[NSUserDefaults standardUserDefaults] dictionaryForKey:alias];
-    [manager GET:GET_LOCATION_URL parameters:params
+    [manager GET:GOTO_LOCATION_URL parameters:params
          success:^(AFHTTPRequestOperation *operation, id responseObject) {
         [_iFlySpeechSynthesizer startSpeaking:JUMP_SUCCESS_VOICE];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
