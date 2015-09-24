@@ -11,12 +11,15 @@
 
 #define APPID_VALUE           @"55fd2a4b"
 
-#define GET_LOCATION_URL      @"http://zeman.im/door/getlatestlocation.php"
+#define GET_LOCATION_URL      @"http://zeman.im/door/savelatestlocation.php"
 #define GOTO_LOCATION_URL     @"http://zeman.im/door/changelocation.php"
 
-#define SET_COMMAND           @"setas"
-#define GOTO_COMMAND          @"goto"
+#define SET_COMMAND           @"saveas"
+#define GOTO_COMMAND          @"go"
 
-#define SAVE_SUCCESS_VOICE    @"saving location succeed"
-#define JUMP_SUCCESS_VOICE    @"jumping to destination"
-#define COMMAND_ERROR_VOICE   @"sorry, I can not recognize your command, please check and speak again"
+#define SAVE_SUCCESS_VOICE    @"saving location succeed."
+#define SAVE_FAIL_VOICE       @"sorry, saving fail."
+#define JUMP_SUCCESS_VOICE    @"jumping to destination."
+#define JUMP_FAIL_VOICE       @"sorry, jumping fail."
+#define JUMP_NOTFOUND_VOICE   @"sorry, destination not found."
+#define COMMAND_ERROR_VOICE   @"sorry, I can not recognize your command."

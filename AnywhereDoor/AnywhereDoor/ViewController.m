@@ -75,7 +75,7 @@
     }
     NSString *resultFromJson = [ISRDataHelper stringFromJson:result];
     
-    self.resultLabel.text = [NSString stringWithFormat:@"%@%@",self.resultLabel.text,resultFromJson];
+    self.resultLabel.text = [NSString stringWithFormat:@"%@",resultFromJson];
     
     [self handleResultStr:resultFromJson];
 }
@@ -133,6 +133,9 @@
         
     //保存录音文件，保存在sdk工作路径中，如未设置工作路径，则默认保存在library/cache下
     [_iFlySpeechRecognizer setParameter:@"asr.pcm" forKey:[IFlySpeechConstant ASR_AUDIO_PATH]];
+    
+    //设置是否返回标点符号：默认1有标点， 0无标点
+    [_iFlySpeechRecognizer setParameter:0 forKey:[IFlySpeechConstant ASR_PTT]];
     _iFlySpeechRecognizer.delegate = self;
     
     
@@ -169,7 +172,7 @@
     
     [self.recordView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.width.equalTo(self.view.mas_width);
-        make.height.equalTo(@100);
+        make.height.equalTo(self.view);
         make.centerY.equalTo(self.view.mas_centerY);
         make.centerX.equalTo(self.view.mas_centerX);
     }];
@@ -199,8 +202,9 @@
 - (void)handleResultStr:(NSString *)result
 {
     NSString *str = [result stringByReplacingOccurrencesOfString:@" " withString:@""];
-    str = [str lowercaseString];
+    str = [str stringByReplacingOccurrencesOfString:@"," withString:@""];
     str = [str stringByReplacingOccurrencesOfString:@"." withString:@""];
+    str = [str lowercaseString];
     if ([str isEqualToString:@""] || [str isEqualToString:@"setas"] || [str isEqualToString:@"goto"]) {
         return;
     }
@@ -220,26 +224,33 @@
 - (void)saveCurrentLocationWithAlias:(NSString *)alias
 {
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    [manager GET:GET_LOCATION_URL parameters:nil
+    NSDictionary *dic = [NSDictionary dictionaryWithObject:alias forKey:@"name"];
+    [manager GET:GET_LOCATION_URL parameters:dic
          success:^(AFHTTPRequestOperation *operation, id responseObject) {
         [[NSUserDefaults standardUserDefaults] setObject:responseObject forKey:alias];
         [_iFlySpeechSynthesizer startSpeaking:SAVE_SUCCESS_VOICE];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"Error: %@", error);
-        // 增加失败处理
+        [_iFlySpeechSynthesizer startSpeaking:SAVE_FAIL_VOICE];
     }];
 }
 
 - (void)jumpToLocationByAlias:(NSString *)alias
 {
+    [_iFlySpeechSynthesizer startSpeaking:JUMP_SUCCESS_VOICE];
+    
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     NSDictionary *params = [[NSUserDefaults standardUserDefaults] dictionaryForKey:alias];
-    [manager GET:GOTO_LOCATION_URL parameters:params
+    if (!params) {
+        [_iFlySpeechSynthesizer startSpeaking:JUMP_NOTFOUND_VOICE];
+        return;
+    }
+    NSMutableDictionary *dicWithAlias = [NSMutableDictionary dictionaryWithDictionary:params];
+    [dicWithAlias setObject:alias forKey:@"name"];
+    [manager GET:GOTO_LOCATION_URL parameters:dicWithAlias
          success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        [_iFlySpeechSynthesizer startSpeaking:JUMP_SUCCESS_VOICE];
+             
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"Error: %@", error);
-        // 增加失败处理
+        [_iFlySpeechSynthesizer startSpeaking:JUMP_FAIL_VOICE];
     }];
 }
 

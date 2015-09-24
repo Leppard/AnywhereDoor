@@ -73,7 +73,7 @@
 - (void)startRecording
 {
     self.timeCount = 0;
-    self.recordLabel.text = @"录音中";
+    self.recordLabel.text = @"Recording";
     self.rippleRadius = 1;
     [self startRippleAnimation];
     [self updateTimeLabel];
@@ -90,8 +90,8 @@
 
 - (void)updateTimeLabel
 {
-    self.timeCount ++;
     self.timeLabel.text = [NSString stringWithFormat:@"%02d:%02d", self.timeCount/60, self.timeCount%60];
+    self.timeCount ++;
 }
 
 - (void)stopRecording
@@ -104,7 +104,7 @@
         [self.recordTimer invalidate];
         self.recordTimer = nil;
     }
-    self.recordLabel.text = @"完成";
+    self.recordLabel.text = @"End";
 }
 
 - (void)setRadius:(CGFloat)radius
