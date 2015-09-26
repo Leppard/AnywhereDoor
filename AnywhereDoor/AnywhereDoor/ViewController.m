@@ -74,7 +74,9 @@
         [result appendFormat:@"%@",key];
     }
     NSString *resultFromJson = [ISRDataHelper stringFromJson:result];
-    
+    if ([resultFromJson isEqualToString:@"."]) {
+        return;
+    }
     self.resultLabel.text = [NSString stringWithFormat:@"%@",resultFromJson];
     
     [self handleResultStr:resultFromJson];
@@ -205,7 +207,8 @@
     str = [str stringByReplacingOccurrencesOfString:@"," withString:@""];
     str = [str stringByReplacingOccurrencesOfString:@"." withString:@""];
     str = [str lowercaseString];
-    if ([str isEqualToString:@""] || [str isEqualToString:@"setas"] || [str isEqualToString:@"goto"]) {
+    NSArray *keyWords = [NSArray arrayWithObjects:@"setas", @"goto", @"setWeather", @"settime", @"peopleflow",@"trafficflow", nil];
+    if ([str isEqualToString:@""] || [keyWords containsObject:str]) {
         return;
     }
     if ([str rangeOfString:SET_COMMAND].location != NSNotFound) { // 保存坐标指令
@@ -216,6 +219,22 @@
         NSRange range = [str rangeOfString:GOTO_COMMAND];
         NSString *aliasStr = [str substringFromIndex:range.location+range.length];
         [self jumpToLocationByAlias:aliasStr];
+    } else if ([str rangeOfString:WEATHER_COMMAND].location != NSNotFound) { // 设置天气
+        NSRange range = [str rangeOfString:WEATHER_COMMAND];
+        NSString *weatherStr = [str substringFromIndex:range.location+range.length];
+        [self setCurrentWeather:weatherStr];
+    } else if ([str rangeOfString:TIME_COMMAND].location != NSNotFound) { // 设置时间
+        NSRange range = [str rangeOfString:TIME_COMMAND];
+        NSString *timeStr = [str substringFromIndex:range.location+range.length];
+        [self setCurrentTime:timeStr];
+    } else if ([str rangeOfString:PFLOW_COMMAND].location != NSNotFound) { // 设置人流
+        NSRange range = [str rangeOfString:PFLOW_COMMAND];
+        NSString *statusStr = [str substringFromIndex:range.location+range.length];
+        [self setPeopleFlowStatus:statusStr];
+    } else if ([str rangeOfString:TFLOW_COMMAND].location != NSNotFound) { // 设置交通流
+        NSRange range = [str rangeOfString:TFLOW_COMMAND];
+        NSString *statusStr = [str substringFromIndex:range.location+range.length];
+        [self setTrafficFlowStatus:statusStr];
     } else {
         [_iFlySpeechSynthesizer startSpeaking:COMMAND_ERROR_VOICE];
     }
@@ -230,14 +249,12 @@
         [[NSUserDefaults standardUserDefaults] setObject:responseObject forKey:alias];
         [_iFlySpeechSynthesizer startSpeaking:SAVE_SUCCESS_VOICE];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        [_iFlySpeechSynthesizer startSpeaking:SAVE_FAIL_VOICE];
+        [_iFlySpeechSynthesizer startSpeaking:NETWORK_FAIL_VOICE];
     }];
 }
 
 - (void)jumpToLocationByAlias:(NSString *)alias
 {
-    [_iFlySpeechSynthesizer startSpeaking:JUMP_SUCCESS_VOICE];
-    
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     NSDictionary *params = [[NSUserDefaults standardUserDefaults] dictionaryForKey:alias];
     if (!params) {
@@ -248,10 +265,90 @@
     [dicWithAlias setObject:alias forKey:@"name"];
     [manager GET:GOTO_LOCATION_URL parameters:dicWithAlias
          success:^(AFHTTPRequestOperation *operation, id responseObject) {
-             
+    [_iFlySpeechSynthesizer startSpeaking:JUMP_SUCCESS_VOICE];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        [_iFlySpeechSynthesizer startSpeaking:JUMP_FAIL_VOICE];
+        [_iFlySpeechSynthesizer startSpeaking:NETWORK_FAIL_VOICE];
     }];
+}
+
+- (void)setCurrentWeather:(NSString *)weather
+{
+    NSArray *collection = [NSArray arrayWithObjects:@"rainy", @"sunny", @"snowy", nil];
+    if (![collection containsObject:weather]) {
+        [_iFlySpeechSynthesizer startSpeaking:WEATHER_NOTFOUND_VOICE];
+        return;
+    }
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    [params setObject:weather forKey:@"weather"];
+    [manager GET:SET_WEATHER_URL parameters:params
+         success:^(AFHTTPRequestOperation *operation, id responseObject) {
+             [_iFlySpeechSynthesizer startSpeaking:WEATHER_SUCCESS_VOICE];
+         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+             [_iFlySpeechSynthesizer startSpeaking:NETWORK_FAIL_VOICE];
+         }];
+}
+
+- (void)setCurrentTime:(NSString *)time
+{
+    NSArray *collection = [NSArray arrayWithObjects:@"morning", @"noon",@"afternoon", @"evening", @"midnight", nil];
+    if (![collection containsObject:time]) {
+        [_iFlySpeechSynthesizer startSpeaking:TIME_NOTFOUND_VOICE];
+        return;
+    }
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    [params setObject:time forKey:@"time"];
+    [manager GET:SET_TIME_URL parameters:params
+         success:^(AFHTTPRequestOperation *operation, id responseObject) {
+             [_iFlySpeechSynthesizer startSpeaking:TIME_SUCCESS_VOICE];
+         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+             [_iFlySpeechSynthesizer startSpeaking:NETWORK_FAIL_VOICE];
+         }];
+}
+
+- (void)setPeopleFlowStatus:(NSString *)status
+{
+    NSNumber *statusCode;
+    if ([status isEqualToString:@"on"]) {
+        statusCode = @1;
+    } else if ([status isEqualToString:@"off"]) {
+        statusCode = @0;
+    } else {
+        [_iFlySpeechSynthesizer startSpeaking:STATUS_NOTFOUND_VOICE];
+        return;
+    }
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    [params setObject:statusCode forKey:@"isOpen"];
+    [manager GET:PFLOW_URL parameters:params
+         success:^(AFHTTPRequestOperation *operation, id responseObject) {
+             [_iFlySpeechSynthesizer startSpeaking:PFLOW_SUCESS_VOICE];
+         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+             [_iFlySpeechSynthesizer startSpeaking:NETWORK_FAIL_VOICE];
+         }];
+}
+
+- (void)setTrafficFlowStatus:(NSString *)status
+{
+    NSNumber *statusCode;
+    if ([status isEqualToString:@"on"]) {
+        statusCode = @1;
+    } else if ([status isEqualToString:@"off"]) {
+        statusCode = @0;
+    } else {
+        [_iFlySpeechSynthesizer startSpeaking:STATUS_NOTFOUND_VOICE];
+        return;
+    }
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    [params setObject:statusCode forKey:@"isOpen"];
+    [manager GET:TFLOW_URL parameters:params
+         success:^(AFHTTPRequestOperation *operation, id responseObject) {
+             [_iFlySpeechSynthesizer startSpeaking:TFLOW_SUCESS_VOICE];
+         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+             [_iFlySpeechSynthesizer startSpeaking:NETWORK_FAIL_VOICE];
+         }];
 }
 
 
